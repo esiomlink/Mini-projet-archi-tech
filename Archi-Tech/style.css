@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  font-family: "Baumanse", cursive;
+  color: #F3F0F0;
+  background: url(/img/bcg.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+/*# -----------header------------*/
+.title h1 {
+  position: absolute;
+  text-shadow: 4px 7px 5px black, 4px 4px 0px black;
+  left: 100px;
+  top: 13px;
+  color: #f3edec;
+  font-weight: bold;
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+}
+
+.title img {
+  display: flex;
+  padding-top: 10px;
+}
+
+@media (max-width: 799px) {
+  .btn-toggle-container {
+    height: 200px;
+    width: 200px;
+    margin: 100px auto;
+    position: absolute;
+    top: -160px;
+    left: 70%;
+  }
+
+  .cont-lignes {
+    width: 60px;
+    height: 42px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .lignes {
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: #000;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .lignes:nth-child(1) {
+    top: 0px;
+  }
+
+  .lignes:nth-child(2) {
+    top: 18px;
+  }
+
+  .lignes:nth-child(3) {
+    top: 36px;
+  }
+
+  .btn1.active .lignes:nth-child(1) {
+    top: 18px;
+    transform: rotate(135deg);
+  }
+
+  .btn1.active .lignes:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  .btn1.active .lignes:nth-child(3) {
+    top: 18px;
+    transform: rotate(-135deg);
+  }
+
+  nav {
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  .liste-nav {
+    position: relative;
+    top: 80px;
+    display: none;
+  }
+
+  .item-nav {
+    display: inline;
+    background: rgba(51, 51, 51, 0.842);
+    margin: 0;
+    padding: 10px 20px;
+  }
+
+  .liste-nav.active-menu {
+    display: inline;
+  }
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: #F3F0F0;
+}
+
+.nav {
+  position: absolute;
+  top: 4px;
+  right: 10px;
+}
+
+li {
+  display: inline;
+  padding: 0 17px;
+  border-left: 3px solid #F3F0F0;
+}
+li:hover {
+  border: 3px solid #F3F0F0;
+  transition: 0.1s ease-in-out;
+}
+li:active {
+  border: 5px solid #F3F0F0;
+}
+
+.line {
+  width: 90%;
+  height: 100px;
+  border: solid 5px #F3F0F0;
+  border-radius: 45%/60px 100px 0 0;
+  border-color: #F3F0F0 transparent transparent transparent;
+}
+
+.carousel {
+  width: 20%;
+  border-radius: 35px 10px 35px 10px;
+  margin: -60px auto 20px auto;
+  overflow: hidden;
+  box-shadow: 8px 8px 4px -3px rgba(0, 0, 0, 0.7);
+}
+@media (max-width: 840px) {
+  .carousel {
+    width: 40%;
+  }
+}
+.carousel__figure {
+  position: relative;
+  width: 300%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  animation: 25s sliders infinite;
+}
+.carousel__figure--pic {
+  width: 33.33%;
+  float: left;
+}
+
+@keyframes sliders {
+  0% {
+    left: 0%;
+  }
+  20% {
+    left: 0%;
+  }
+  25% {
+    left: -100%;
+  }
+  45% {
+    left: -100%;
+  }
+  50% {
+    left: -200%;
+  }
+  70% {
+    right: 200%;
+  }
+  75% {
+    right: 100%;
+  }
+  95% {
+    right: 100%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+.offers {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.perspective {
+  width: 100%;
+  perspective: 800px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.perspective__3d {
+  width: 140px;
+  height: 200px;
+  margin: auto;
+  box-shadow: 0 70px 63px -60px #494848;
+  transform-style: preserve-3d;
+  transition: transform 0.05s linear;
+}
+.perspective__3d--card {
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+}
+.perspective__3d--card:after {
+  background: inherit;
+  content: "";
+  display: block;
+  position: absolute;
+  left: -60px;
+  top: 40px;
+  width: 100%;
+  height: 85%;
+  z-index: -1;
+  filter: blur(30px);
+}
+.perspective h2 {
+  position: absolute;
+  font-family: "Oswald", sans-serif;
+  top: 0;
+  left: -30px;
+  color: #080808;
+  text-shadow: 2px 2px 2px #fff6f6, 2px 2px 2px #f5f0f0;
+  font-size: 1.1em;
+  font-weight: 600;
+  transform: translateZ(80px);
+  text-transform: uppercase;
+}
+.perspective span {
+  color: #050505;
+  font-family: "JetBrains", sans-serif;
+  text-shadow: 2px 2px 2px #faf4f4, 2px 2px 2px #f7f4f4;
+  position: absolute;
+  bottom: 40px;
+  right: -30px;
+  font-size: 0.8em;
+  font-weight: 600;
+  z-index: 240;
+  transform: translateZ(35px);
+}
+
+.button {
+  padding-top: 60px;
+  position: relative;
+  margin: 0 auto;
+  width: 320px;
+  text-shadow: 4px 7px 5px black, 4px 4px 0px black;
+}
+.button:hover .button__rect {
+  stroke-dasharray: 760;
+  stroke-dashoffset: 0;
+  stroke-width: 2px;
+}
+.button__rect {
+  fill: transparent;
+  stroke: #FA9E1E;
+  border-bottom: 5px solid #FA9E1E;
+  transition: stroke-width 1s, strpke-dashoffset 1s, stroke-dasharray 1s;
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+}
+.button__text {
+  position: relative;
+  text-align: center;
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: #F3F0F0;
+  top: -48px;
+}
+
+footer {
+  position: absolute;
+  bottom: 20px;
+  left: 10%;
+  right: 10%;
+}
+
+.network {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3em;
+  font-family: "Oswald", cursive;
+  text-shadow: 4px 7px 5px black, 4px 4px 0px black;
+}
+.network i {
+  color: #F3F0F0;
+}
+.network a {
+  padding: 0px 25px;
+}
+@media (max-width: 840px) {
+  .network a {
+    padding: 0px 5px;
+  }
+}
+.network a:hover {
+  transform: scale(2.5);
+  transition: 0.4s ease-in-out;
+  text-shadow: 0 0 5px #F3F0F0, 0 0 10px #F3F0F0, 0 0 15px #F3F0F0, 0 0 20px #FA9E1E, 0 0 30px #FA9E1E, 0 0 40px #FA9E1E, 0 0 55px #FA9E1E, 0 0 75px #FA9E1E;
+}
+.network a:hover:nth-child(5) {
+  transform: scale(1.1);
+  font-weight: bolder;
+}
+
+/*# sourceMappingURL=style.css.map */
+
+/*# sourceMappingURL=style.css.map */
